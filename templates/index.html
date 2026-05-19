@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background: linear-gradient(to right, #141e30, #243b55);
+        }
+
+        .container{
+            width:400px;
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0px 4px 20px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:25px;
+            color:#243b55;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            background:#243b55;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#141e30;
+        }
+
+        .prediction{
+            margin-top:20px;
+            text-align:center;
+            font-size:22px;
+            color:green;
+            font-weight:bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>House Price Prediction</h1>
+
+        <form action="/predict" method="post">
+
+            <input type="number" name="area" placeholder="Enter Area" required>
+
+            <input type="number" name="bedrooms" placeholder="Enter Bedrooms" required>
+
+            <input type="number" name="bathrooms" placeholder="Enter Bathrooms" required>
+
+            <input type="number" name="stories" placeholder="Enter Stories" required>
+
+            <input type="number" name="parking" placeholder="Enter Parking" required>
+
+            <button type="submit">Predict Price</button>
+
+        </form>
+
+        <div class="prediction">
+            {{ prediction_text }}
+        </div>
+
+    </div>
+
+</body>
+</html>
+```
+

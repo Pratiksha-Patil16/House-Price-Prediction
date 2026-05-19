@@ -21,7 +21,6 @@ def predict():
     stories = int(request.form["stories"])
     parking = int(request.form["parking"])
 
-    # Input data
     features = np.array([[area, bedrooms, bathrooms, stories, parking]])
 
     prediction = model.predict(features)
